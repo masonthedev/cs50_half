@@ -9,12 +9,6 @@
 
 // Provided Code:
 
-// Hints:
-// Note that the tax and tip are input as percents. You may want to change these to decimal values before calculating the total.
-// Since the tip is input as an int, keep in mind that if you divide an int by an int you’ll get back an int!
-// Order of operations here is exactly the same as in algebra, where multiplcation and division are performed before addition and
-// subtraction.
-
 // #include <cs50.h>
 // #include <stdio.h>
 
@@ -54,12 +48,13 @@ int main(void)
 // TODO: Complete the function
 float half(float bill, float tax, float tip)
 {
-    float bill_with_tax = bill + (bill * (tax / 100));
-    return (bill_with_tax + (bill_with_tax * (tip / 100))) / 2;
-
     // first attempt to create equation:
     // return ((bill * (tax/100)) + (tip/100) + bill) / 2;
 
     // Second Attempt to create equation:
     // return (bill + (bill * (tax/100)) + (bill * (tip/100))) / 2;
+
+    // Final Equation required changing the tip from an int to a float.
+    float bill_with_tax = bill + (bill * (tax / 100));
+    return (bill_with_tax + (bill_with_tax * (tip / 100))) / 2;
 }
